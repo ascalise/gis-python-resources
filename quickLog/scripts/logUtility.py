@@ -1,15 +1,18 @@
 
-# logMakaer func defines a logger '__main__' when initiated. Requires
-# a valid parent directory, file name in str format as arguments.
+'''logMakaer func defines a logger '__main__' when initiated. Requires
+a valid parent directory, file name in str format as arguments.
 
-# log children can be initiated by calling the base logging function '.getChildren()'
-# on the class object.
+log children can be initiated by calling the base logging function '.getChildren()'
+on the class object.
 
-#use of @log will log a starting and ending of the function
-# s a child of __main__ for easier debug.
+use of @log will log a starting and ending of the functions 
+a child of __main__ for easier debug.
+'''
 
 
-from devPackages.dependencies import *
+import logging
+from datetime import datetime
+import os
 
 
 def logMaker(parent_directory: str, file_name: str = 'scriptLog') -> logging.Logger:
@@ -55,7 +58,7 @@ def logMaker(parent_directory: str, file_name: str = 'scriptLog') -> logging.Log
     return logger
     
 
-def log(func):
+def log_deco(func):
 
     def wrapper(*args, **kwargs):
         log = logging.getLogger('__main__')
@@ -65,23 +68,4 @@ def log(func):
         log2.info(f"{func.__name__} has completed")
     return wrapper
 
-#sample code
-
-# @log
-# def printLogLocation(parent_directory):
-#     log = logging.getLogger(__name__)
-#     funcName = inspect.currentframe().f_code.co_name
-#     log2 = log.getChild(funcName)
-#     log2.info(parent_directory)
-    
-
-    
-# if __name__ == "__main__":
-#     parent_directory = r"C:\Users\austi\OneDrive - North West Utility District\pythonProjects\loggingProjects\testing"
-#     file_name = "yesNew"
-#     logMaker(parent_directory, file_name)
-#     logger = logging.getLogger(__name__)
-#     logger.info('Logging established successfully')
-#     printLogLocation(parent_directory)
-    
     

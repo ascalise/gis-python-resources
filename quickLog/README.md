@@ -1,0 +1,2 @@
+**logUtility**<br><br>
+This module contains a basic setup structure for a simple logger includeding a decorator that can be used for functions. The when used, the log appears in the given directory with the provided name followed by the date in "%m%d%Y" format.
