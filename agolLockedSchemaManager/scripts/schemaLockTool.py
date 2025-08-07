@@ -23,11 +23,8 @@ class SchemaManager:
         print(result)
         
        
-    def unlock_schema(joined_view_items: list ) -> dict:
+    def unlock_schema(self) -> dict:
         '''
-        ##Inputs
-        - joined_view_ids: a list of agol items for each joined view layer
-        wanting to unlock.
         ##Return
         - A dictionary containing a status key and a props key. 
         Update status can be verified with the status key and further validation can
@@ -37,7 +34,7 @@ class SchemaManager:
         #convert item to flc to access and manipulate properties
         
         results = {}
-        for item in joined_view_items:
+        for item in self.views:
             flc = FeatureLayerCollection.fromitem(item)
             
             updates = {'sourceSchemaChangesAllowed' : True,
@@ -53,10 +50,8 @@ class SchemaManager:
         
         return results
 
-    def lock_schema(joined_view_items: list) -> dict:
+    def lock_schema(self) -> dict:
         '''
-        ##Inputs
-        - joined_view_items: a list agol item join layer views to unlock.
         ##Return
         - A dictionary containing a status key and a props key. 
         Update status can be verified with the status key and further validation can
@@ -66,7 +61,7 @@ class SchemaManager:
         
         #convert item to flc to access and manipulate properties
         results = {}
-        for item in joined_view_items:
+        for item in self.views:
             flc = FeatureLayerCollection.fromitem(item)
             updates = {'sourceSchemaChangesAllowed' : False,
                     'hasStaticData' : True,
