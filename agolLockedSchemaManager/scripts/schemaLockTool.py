@@ -43,8 +43,8 @@ class SchemaManager:
             
             status = flc.manager.update_definition(updates)
             
-            output = {'status' : status,
-                    'props' : flc.properties}
+            output = {'status' : status}
+            self.update_props = flc.properties
             
             results[flc.properties['serviceItemId']] = output
         
