@@ -1,5 +1,5 @@
 from arcgis.gis import GIS
-from ..scripts.schemaLockTool import SchemaManager
+from scripts.schemaLockTool import SchemaManager
 
 #credential to authenticate with the arcgis python module
 org_url = "https://myorg.maps.arcgis.com"
@@ -35,6 +35,3 @@ to their original state. Once the metho has been invoked, you should
 be able to refresh your browser and see that you can no longer
 edit fields in the AGOL interface.
 '''
-
-#lock schema
-managed_item.lock_schema()
