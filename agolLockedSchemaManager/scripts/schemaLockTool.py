@@ -34,6 +34,7 @@ class SchemaManager:
         #convert item to flc to access and manipulate properties
         
         results = {}
+        self.update_props = []
         for item in self.views:
             flc = FeatureLayerCollection.fromitem(item)
             
@@ -43,8 +44,8 @@ class SchemaManager:
             
             status = flc.manager.update_definition(updates)
             
-            output = {'status' : status,
-                    'props' : flc.properties}
+            output = {'status' : status}
+            self.update_props.append(flc.properties)
             
             results[flc.properties['serviceItemId']] = output
         
@@ -61,6 +62,7 @@ class SchemaManager:
         
         #convert item to flc to access and manipulate properties
         results = {}
+        self.update_props = []
         for item in self.views:
             flc = FeatureLayerCollection.fromitem(item)
             updates = {'sourceSchemaChangesAllowed' : False,
@@ -69,8 +71,8 @@ class SchemaManager:
             
             status = flc.manager.update_definition(updates)
             
-            output = {'status' : status,
-                    'props' : flc.properties}
+            output = {'status' : status}
+            self.update_props.append(flc.properties)
             
             results[flc.properties['serviceItemId']] = output
         
