@@ -1,0 +1,2 @@
+**schemaLockTool**<br><br>
+ArcGIS Online has a loosely documented limits on the number of feature edits that can be made per given request. This becomes problematic especially when cleaning erroneuos data. Given this limitation, the script here serves as a mean to interact with these hosted feature layers to remove features in a way that does not trigger time out errors through the requests.
