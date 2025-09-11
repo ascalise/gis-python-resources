@@ -1,13 +1,5 @@
 # Computes a distance table for all points in a selection set
 
-# Before running this macro
-
-#    - Open a map of the US,
-
-#     - Make the City/Town layer the working layer
-
-#     - Create a "My Towns" Selection Set using the Selection Toolbar
-
 import caliperpy
 import tempfile
 

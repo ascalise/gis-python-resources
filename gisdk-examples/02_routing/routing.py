@@ -112,16 +112,14 @@ try:
             _MessageBoxW(0, "Path length: " + str(dist) + " : " + "Path Time: " + str(time), "Information", MB_OK)
                         
 
-
-
-                      
-
    else:
 
        raise Exception("Please open a map window first")
+    caliperpy.Maptitude.disconnect()
 
   
 
 except Exception as Error:
 
    _MessageBoxW(0, repr(error), "Information", MB_OK)
+   caliperpy.Maptitude.disconnect()

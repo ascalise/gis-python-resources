@@ -19,7 +19,7 @@ This example demonstrates how to **optimize a route along given points** using t
 
 ## How to Run
 1. Open Maptitude manually
-2. Open a new map of the Unites States  (File > New Workspace > New map of the United States).  For running the scripot on a country other than the US, you would need to repalce the harwired coordinates accordingly.
+2. Open a new map of the Unites States  (File > New Workspace > New map of the United States).  For running the scripot on a country other than the US, you would need to replace the hardwired coordinates accordingly.
 
 ```bash
 python routing.py
